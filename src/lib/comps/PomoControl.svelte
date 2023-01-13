@@ -1,16 +1,16 @@
 <script>
-import PomoTimer from "$comps/PomoTimer.svelte";
-import PomoControl from "$comps/PomoControl.svelte";
+import Play from "$icons/play.svg?component";
+import Button from "$comps/Button.svelte";
 </script>
 
 <!--------markup-------->
 
-<PomoTimer />
-<PomoControl />
+<Button variant="default" text="Start" />
 
 <!--------style-------->
 <style lang="sass">
   @use 'src/vars'
   @use 'src/oc'
+
 
 </style>
