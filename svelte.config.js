@@ -7,11 +7,7 @@ const dev = process.argv.includes("dev");
 const config = {
 	preprocess: vitePreprocess(),
 	kit: {
-		adapter: adapter({
-			pages: "docs",
-			assets: "docs",
-			fallback: null
-		}),
+		adapter: adapter({}),
 		alias: {
 			$src: "./src/",
 			$comps: "./src/lib/comps/",
