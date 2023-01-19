@@ -1,18 +1,25 @@
 <script>
+import Timer from "$comps/Timer.svelte";
+import Settings from "$comps/Settings.svelte";
+import { showingSettings } from "$src/stores.js";
 </script>
 
 <!--------markup-------->
 
-<div class="wrap" />
+<div hidden={$showingSettings}>
+	<Timer />
+</div>
+<div hidden={!$showingSettings}>
+	<Settings />
+</div>
 
 <!--------style-------->
 <style lang="sass">
   @use 'src/vars'
   @use 'src/oc'
 
+div
+  height: 100%
+  width: 100%
 
-  .wrap
-    border: vars.$border
-    width: vars.$size-20
-    height: vars.$size-24
 </style>
