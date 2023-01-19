@@ -5,7 +5,11 @@ import { vitePreprocess } from "@sveltejs/kit/vite";
 const config = {
 	preprocess: vitePreprocess(),
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			pages: "build",
+			assets: "build",
+			fallback: null
+		}),
 		alias: {
 			$src: "./src/",
 			$comps: "./src/lib/comps/",
@@ -14,8 +18,8 @@ const config = {
 		},
 		files: {
 			assets: "./src/lib/assets"
-		},
-		outDir: ".build"
+		}
+		//outDir: "build"
 	}
 };
 
