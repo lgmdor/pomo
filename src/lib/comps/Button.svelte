@@ -1,15 +1,15 @@
 <script>
 export let text = "Click";
-export let onclick = () => {};
 export let variant = "default";
 export let fullWidth = false;
 </script>
 
 <button
-	on:click={onclick}
+	on:click
 	class:full-width={fullWidth}
 	class:variant-default={variant === "default"}
 	class:variant-filled={variant === "filled"}
+	class:variant-outline={variant === "outline"}
 	><div class="icon"><slot /></div>
 	<span>{text}</span></button
 >
@@ -21,15 +21,16 @@ export let fullWidth = false;
 button
   font-family: vars.$font-family
   border: none
-  padding: 0 18px
-  height: 36px
+  padding: 0 16px
+  height: 32px
   font-weight: 600
   font-size: 14px
+  letter-spacing: 0.25px
   border-radius: vars.$border-radius
   line-height: 1
   user-select: none
   cursor: pointer
-  transition: all 60ms linear
+  transition: all vars.$transition-duration linear
   min-width: vars.$size-6
   display: flex
   align-items: center
@@ -41,14 +42,20 @@ button
   &.variant-default
     background: oc.$dark-6
     color: vars.$c-text-1
-    border: vars.$border
+    border: 1px solid oc.$dark-4
     &:hover
-      background: transparentize(oc.$dark-4, 0.55)
+      background: lighten(oc.$dark-6, 2%)
   &.variant-filled
     background: vars.$c-main
     color: #fff
     &:hover
       background: darken(vars.$c-main, 4%)
+  &.variant-outline
+    background: transparent
+    color: vars.$c-main
+    border: 1px solid currentColor
+    &:hover
+      background: transparentize(vars.$c-main, 0.94)
   .icon :global(svg)
     height: 14px
     width: 14px
