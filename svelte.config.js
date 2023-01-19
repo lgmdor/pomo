@@ -6,8 +6,8 @@ const config = {
 	preprocess: vitePreprocess(),
 	kit: {
 		adapter: adapter({
-			pages: "build",
-			assets: "build",
+			pages: "docs",
+			assets: "docs",
 			fallback: null
 		}),
 		alias: {
@@ -19,7 +19,7 @@ const config = {
 		files: {
 			assets: "./src/lib/assets"
 		}
-		//outDir: "build"
+		//outDir: "docs"
 	}
 };
 
