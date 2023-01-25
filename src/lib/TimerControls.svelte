@@ -1,7 +1,7 @@
 <script>
 import IconSkip from "$icons/skip.svg?component";
 import IconReset from "$icons/reset.svg?component";
-import Button from "$comps/Button.svelte";
+import Button from "$lib/Button.svelte";
 import tippy from "tippy.js";
 import { getContext } from "svelte";
 import { STATE_NAMES } from "$src/utils.js";

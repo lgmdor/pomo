@@ -1,5 +1,5 @@
 <script>
-import PomoHeader from "$comps/PomoHeader.svelte";
+import PomoHeader from "$lib/PomoHeader.svelte";
 </script>
 
 <div class="wrap">

@@ -1,5 +1,5 @@
 <script>
-import SettingsMenuItem from "$comps/SettingsMenuItem.svelte";
+import SettingsMenuItem from "$lib/SettingsMenuItem.svelte";
 import IconTime from "$icons/time.svg?component";
 import IconSettings from "$icons/settings.svg?component";
 import IconColor from "$icons/color.svg?component";

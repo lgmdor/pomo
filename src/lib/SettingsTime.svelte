@@ -1,5 +1,5 @@
 <script>
-import SettingsTimeItem from "$comps/SettingsTimeItem.svelte";
+import SettingsTimeItem from "$lib/SettingsTimeItem.svelte";
 import { db } from "$src/db.js";
 import { onMount, getContext } from "svelte";
 import { DEFAULT_SETTINGS, STATE_NAMES, DB_NAMES } from "$src/utils.js";

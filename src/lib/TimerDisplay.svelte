@@ -1,5 +1,5 @@
 <script>
-import TimerProgress from "$comps/TimerProgress.svelte";
+import TimerProgress from "$lib/TimerProgress.svelte";
 import { formatTime } from "$src/utils.js";
 import { getContext } from "svelte";
 

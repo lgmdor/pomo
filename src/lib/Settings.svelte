@@ -1,8 +1,8 @@
 <script>
 import { setContext, onMount } from "svelte";
 import { writable } from "svelte/store";
-import SettingsTime from "$comps/SettingsTime.svelte";
-import SettingsMenu from "$comps/SettingsMenu.svelte";
+import SettingsTime from "$lib/SettingsTime.svelte";
+import SettingsMenu from "$lib/SettingsMenu.svelte";
 import { createSingleton } from "tippy.js";
 
 const currTab = writable(0);

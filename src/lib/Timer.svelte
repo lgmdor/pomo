@@ -1,6 +1,6 @@
 <script>
-import TimerDisplay from "$comps/TimerDisplay.svelte";
-import TimerControls from "$comps/TimerControls.svelte";
+import TimerDisplay from "$lib/TimerDisplay.svelte";
+import TimerControls from "$lib/TimerControls.svelte";
 import { setInterval, clearInterval } from "worker-timers";
 import { db } from "$src/db.js";
 import { setContext, onMount } from "svelte";

@@ -1,5 +1,5 @@
 <script>
-import InputRange from "$comps/InputRange.svelte";
+import InputRange from "$lib/InputRange.svelte";
 import { db } from "$src/db.js";
 import { formatTime } from "$src/utils.js";
 import { UNIT, DEFAULT_SETTINGS, DB_NAMES } from "$src/utils.js";

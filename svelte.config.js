@@ -10,12 +10,12 @@ const config = {
 		adapter: adapter({}),
 		alias: {
 			$src: "./src/",
-			$comps: "./src/lib/comps/",
-			$assets: "./src/lib/assets/",
-			$icons: "./src/lib/assets/icons"
+			$lib: "./src/lib/",
+			$assets: "./src/assets/",
+			$icons: "./src/assets/icons/"
 		},
 		files: {
-			assets: "./src/lib/assets"
+			assets: "./src/assets/"
 		},
 		//outDir: "docs"
 		paths: {

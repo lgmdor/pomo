@@ -1,6 +1,6 @@
 <script>
-import Timer from "$comps/Timer.svelte";
-import Settings from "$comps/Settings.svelte";
+import Timer from "$lib/Timer.svelte";
+import Settings from "$lib/Settings.svelte";
 import { showingSettings } from "$src/stores.js";
 </script>
 
