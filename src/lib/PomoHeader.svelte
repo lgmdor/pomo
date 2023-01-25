@@ -45,7 +45,7 @@ const hideSettings = () => showingSettings.update((x) => false);
     :global(svg)
       cursor: pointer
       border-radius: vars.$border-radius
-      transition: all vars.$transition-duration linear
+      transition: vars.$transition
       color: vars.$c-text-2
     :global(svg:hover)
       color: vars.$c-white

@@ -86,7 +86,7 @@ onMount(() => {
 			text-decoration: underline
 			cursor: pointer
 			color: vars.$c-text-2
-			transition: color vars.$transition-duration linear
+			transition: vars.$transition
 			&:hover
 				color: vars.$c-text-1
 </style>

@@ -43,7 +43,7 @@ const updateProgress = () => {
     transform: rotate(270deg)
     .total, .progress
       fill: none
-      transition: all vars.$transition-duration linear
+      transition: vars.$transition
     .progress
       stroke-dasharray: 100 100
       stroke-dashoffset: 100

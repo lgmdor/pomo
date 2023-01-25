@@ -4,6 +4,7 @@ import { writable } from "svelte/store";
 import SettingsTime from "$lib/SettingsTime.svelte";
 import SettingsMenu from "$lib/SettingsMenu.svelte";
 import { createSingleton } from "tippy.js";
+import { Tabs, TabsMenu, TabsMenuItem, TabsWrapper } from "$lib/Tabs/tabs.js";
 
 const currTab = writable(0);
 const tippys = writable([]);

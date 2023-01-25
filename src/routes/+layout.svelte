@@ -35,7 +35,7 @@ import PomoHeader from "$lib/PomoHeader.svelte";
   :global(svg)
     display: block
     user-select: none
-    transition: color vars.$transition-duration linear
+    transition: vars.$transition
 
   .wrap
     position: relative

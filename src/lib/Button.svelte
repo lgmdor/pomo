@@ -30,7 +30,7 @@ button
   line-height: 1
   user-select: none
   cursor: pointer
-  transition: all vars.$transition-duration linear
+  transition: vars.$transition
   min-width: vars.$size-6
   display: flex
   align-items: center

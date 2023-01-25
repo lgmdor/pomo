@@ -61,7 +61,7 @@ const tooltipSettings = {
     justify-content: center
     flex-direction: column
     user-select: none
-    transition: all vars.$transition-duration linear
+    transition: vars.$transition
     cursor: pointer
     color: vars.$c-text-2
     &:hover

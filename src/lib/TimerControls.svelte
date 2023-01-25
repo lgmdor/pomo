@@ -127,7 +127,7 @@ const tooltipSettings = {
       border: 1px solid oc.$dark-4
       background: oc.$dark-6
       cursor: pointer
-      transition: all vars.$transition-duration linear
+      transition: vars.$transition
       &:hover
         background: lighten(oc.$dark-6, 2%)
       &:active
