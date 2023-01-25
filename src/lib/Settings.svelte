@@ -1,56 +1,31 @@
 <script>
-import { onMount } from "svelte";
-import { writable } from "svelte/store";
 import SettingsTime from "$lib/SettingsTime.svelte";
-import { createSingleton } from "tippy.js";
 import { Tabs, TabsMenu, TabsMenuItem, TabsWrapper } from "$lib/Tabs/tabs.js";
 import IconTime from "$icons/time.svg?component";
 import IconSettings from "$icons/settings.svg?component";
 import IconColor from "$icons/color.svg?component";
 import IconInfo from "$icons/info.svg?component";
-
-const tippys = writable([]);
-
-let tippysSingleton;
-
-// setContext("pomo_settings", {
-// 	currTab,
-// 	tippys,
-// 	changeTab: (tab) => currTab.update((x) => tab)
-// });
-
-onMount(() => {
-	tippysSingleton = createSingleton($tippys, {
-		delay: 600,
-		moveTransition: "transform 60ms linear",
-		arrow: false
-	});
-});
 </script>
 
 <!--------markup-------->
 
 <div class="settings">
-	<!-- <div class="tabs">
-		<SettingsTime slot="setting" tab={0} />
-	</div>
-	<SettingsMenu /> -->
 	<Tabs>
 		<TabsWrapper>
 			<SettingsTime />
 		</TabsWrapper>
 
 		<TabsMenu slot="menu">
-			<TabsMenuItem>
+			<TabsMenuItem tooltip="Time">
 				<IconTime />
 			</TabsMenuItem>
-			<TabsMenuItem>
+			<TabsMenuItem tooltip="Settings">
 				<IconSettings />
 			</TabsMenuItem>
-			<TabsMenuItem>
+			<TabsMenuItem tooltip="Themes">
 				<IconColor />
 			</TabsMenuItem>
-			<TabsMenuItem>
+			<TabsMenuItem tooltip="Info">
 				<IconInfo />
 			</TabsMenuItem>
 		</TabsMenu>

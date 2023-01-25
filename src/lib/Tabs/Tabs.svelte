@@ -6,6 +6,14 @@ export const key = Symbol();
 import { setContext } from "svelte";
 import { writable } from "svelte/store";
 
+export let tippySingletonSettings = {
+	delay: 600,
+	moveTransition: "transform 60ms linear",
+	arrow: false
+};
+
+let tippySingleton;
+
 const tabs = [];
 const menuItems = [];
 
@@ -32,6 +40,20 @@ const selectMenuItem = (item) => {
 	selectTab(tabs[menuItems.indexOf($currMenuItem)]);
 };
 
+const tippys = [];
+
+const addTippy = (tippy) => {
+	tippys.push(tippy);
+
+	setTippySingleton();
+};
+
+const setTippySingleton = async () => {
+	const { createSingleton } = await import("tippy.js");
+
+	tippySingleton = createSingleton(tippys, tippySingletonSettings);
+};
+
 setContext(key, {
 	tabs,
 	menuItems,
@@ -40,7 +62,9 @@ setContext(key, {
 	registerTab,
 	registerMenuItem,
 	selectTab,
-	selectMenuItem
+	selectMenuItem,
+	tippys,
+	addTippy
 });
 </script>
 
