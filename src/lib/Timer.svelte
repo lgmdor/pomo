@@ -7,6 +7,8 @@ import { setContext, onMount } from "svelte";
 import { writable } from "svelte/store";
 import { liveQuery } from "dexie";
 import { STATE_NAMES, UNIT, DB_NAMES } from "$src/utils.js";
+import soundPath from "$assets/finished.ogg";
+import { soundVolume } from "$src/stores.js";
 
 let settings;
 
@@ -18,6 +20,10 @@ const time = writable(0);
 const timeTotal = writable(0);
 const timer = writable(null);
 const round = writable(1);
+
+const sound = new Audio(soundPath);
+
+sound.volume = $soundVolume;
 
 const updateSettings = () => {
 	if ($settings) {
@@ -92,7 +98,7 @@ const everySecond = () => {
 		time.update(($time) => $time - UNIT);
 	} else {
 		ctx.skipRound();
-		ctx.stopTimer();
+		sound.play();
 		updateTime();
 	}
 };

@@ -16,9 +16,9 @@ export const UNIT = 1000;
 
 export const DEFAULT_SETTINGS = {
 	time: {
-		focus: 25 * UNIT * 60,
-		breakShort: 5 * UNIT * 60,
-		breakLong: 15 * UNIT * 60,
+		focus: 0.1 * UNIT * 60,
+		breakShort: 0.1 * UNIT * 60,
+		breakLong: 0.1 * UNIT * 60,
 		rounds: 4,
 		min: 2.5,
 		max: 45,
