@@ -32,16 +32,7 @@ const hideSettings = () => showingSettings.update((x) => false);
     display: flex
     justify-content: flex-start
     width: 100%
-    border-bottom: vars.$border
-    h1
-      color: oc.$red-2
-      font-weight: 500
-      font-size: 19px
-      letter-spacing: 0.5px
-      font-family: "Inconsolata"
-      position: absolute
-      left: 50%
-      transform: translateX(-50%)
+    border-bottom: vars.$border-default
     :global(svg)
       cursor: pointer
       border-radius: vars.$border-radius

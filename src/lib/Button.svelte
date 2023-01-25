@@ -42,7 +42,7 @@ button
   &.variant-default
     background: oc.$dark-6
     color: vars.$c-text-1
-    border: 1px solid oc.$dark-4
+    border: vars.$border-bright
     &:hover
       background: lighten(oc.$dark-6, 2%)
   &.variant-filled

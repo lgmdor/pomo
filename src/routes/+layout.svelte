@@ -47,5 +47,5 @@ import PomoHeader from "$lib/PomoHeader.svelte";
     background: vars.$c-bg-3
     border-radius: vars.$border-radius
     overflow: hidden
-    border: vars.$border
+    border: vars.$border-default
 </style>

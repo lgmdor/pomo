@@ -124,7 +124,7 @@ const tooltipSettings = {
       align-items: center
       justify-content: center
       border-radius: vars.$border-radius
-      border: 1px solid oc.$dark-4
+      border: vars.$border-bright
       background: oc.$dark-6
       cursor: pointer
       transition: vars.$transition

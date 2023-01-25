@@ -5,13 +5,9 @@ import { onMount, getContext } from "svelte";
 import { DEFAULT_SETTINGS, STATE_NAMES, DB_NAMES } from "$src/utils.js";
 import { liveQuery } from "dexie";
 
-export let tab;
-
 let settings;
 
 $: $settings, updateSettings();
-
-const { currTab } = getContext("pomo_settings");
 
 const reset = async () => {
 	const x = await db[DB_NAMES.time].bulkPut([
@@ -35,37 +31,35 @@ onMount(() => {
 
 <!--------markup-------->
 
-{#if $currTab == tab}
-	<div class="wrap">
-		{#if $settings?.length}
-			<SettingsTimeItem
-				name={STATE_NAMES.focus}
-				color="a"
-				defaultValue={getSetting(STATE_NAMES.focus).value}
-			/>
-			<SettingsTimeItem
-				name={STATE_NAMES.breakShort}
-				color="b"
-				defaultValue={getSetting(STATE_NAMES.breakShort).value}
-			/>
-			<SettingsTimeItem
-				name={STATE_NAMES.breakLong}
-				color="c"
-				defaultValue={getSetting(STATE_NAMES.breakLong).value}
-			/>
-			<SettingsTimeItem
-				name={getSetting("Rounds").name}
-				color="d"
-				defaultValue={getSetting("Rounds").value}
-				min="1"
-				max="12"
-				step="1"
-				type="amount"
-			/>
-			<!--<span class="reset" on:click={reset} aria-hidden="true">reset</span>-->
-		{/if}
-	</div>
-{/if}
+<div class="wrap">
+	{#if $settings?.length}
+		<SettingsTimeItem
+			name={STATE_NAMES.focus}
+			color="a"
+			defaultValue={getSetting(STATE_NAMES.focus).value}
+		/>
+		<SettingsTimeItem
+			name={STATE_NAMES.breakShort}
+			color="b"
+			defaultValue={getSetting(STATE_NAMES.breakShort).value}
+		/>
+		<SettingsTimeItem
+			name={STATE_NAMES.breakLong}
+			color="c"
+			defaultValue={getSetting(STATE_NAMES.breakLong).value}
+		/>
+		<SettingsTimeItem
+			name={getSetting("Rounds").name}
+			color="d"
+			defaultValue={getSetting("Rounds").value}
+			min="1"
+			max="12"
+			step="1"
+			type="amount"
+		/>
+		<!--<span class="reset" on:click={reset} aria-hidden="true">reset</span>-->
+	{/if}
+</div>
 
 <!--------style-------->
 <style lang="sass">
