@@ -37,7 +37,7 @@ const hideSettings = () => showingSettings.update((x) => false);
       cursor: pointer
       border-radius: vars.$border-radius
       transition: vars.$transition
-      color: vars.$c-text-2
+      color: vars.$c-text-default
     :global(svg:hover)
       color: vars.$c-white
 </style>

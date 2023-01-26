@@ -68,19 +68,19 @@ onMount(() => {
   
 	.wrap
 		display: flex
-		flex-direction: column
-		justify-content: flex-start
 		align-items: center
-		gap: vars.$space-6
+		justify-content: space-between
+		flex-direction: column
 		height: 100%
 		width: 100%
+		padding: vars.$size-1 0
 		.reset
 			font-size: 12px
 			letter-spacing: 0.4px
 			text-decoration: underline
 			cursor: pointer
-			color: vars.$c-text-2
+			color: vars.$c-text-default
 			transition: vars.$transition
 			&:hover
-				color: vars.$c-text-1
+				color: vars.$c-text-dark
 </style>

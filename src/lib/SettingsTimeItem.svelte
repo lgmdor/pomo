@@ -54,18 +54,15 @@ const saveValue = () => {
     height: vars.$size-4
     .details
       width: 100%
-      margin-bottom: vars.$space-7
+      margin-bottom: vars.$space-6
       display: flex
-      justify-content: flex-end
+      justify-content: space-between
       align-items: center
       position: relative
       cursor: default
       .name
         font-size: 14px
         letter-spacing: 0.25px
-        position: absolute
-        right: 50%
-        transform: translateX(50%)
       .value
         margin-left: vars.$space-6
         font-family: "Inconsolata"
@@ -73,6 +70,7 @@ const saveValue = () => {
         padding: 0.3em
         border-radius: vars.$border-radius
         font-weight: 500
+        color: vars.$c-text-bright
         &.time
         &.amount
 </style>

@@ -23,7 +23,7 @@ import PomoHeader from "$lib/PomoHeader.svelte";
     flex-direction: column
     font-family: vars.$font-family
     background: vars.$c-bg-2
-    color: oc.$gray-5
+    color: vars.$c-text-default
     height: 100vh
   
   :global(body .tippy-box)

@@ -41,7 +41,7 @@ button
     width: 100%
   &.variant-default
     background: oc.$dark-6
-    color: vars.$c-text-1
+    color: vars.$c-text-dark
     border: vars.$border-bright
     &:hover
       background: lighten(oc.$dark-6, 2%)

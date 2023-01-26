@@ -34,7 +34,7 @@ const { state, time, round, rounds } = getContext("pomo_timer");
     .round, .time
       font-family: "Inconsolata"
     .round
-      color: vars.$c-text-2
+      color: vars.$c-text-default
       letter-spacing: 0.25px
     .time
       font-size: 42px
