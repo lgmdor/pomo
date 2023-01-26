@@ -4,7 +4,7 @@ import IconReset from "$icons/reset.svg?component";
 import Button from "$lib/Button.svelte";
 import tippy from "tippy.js";
 import { getContext } from "svelte";
-import { STATE_NAMES } from "$src/utils.js";
+import { NAMES } from "$src/utils.js";
 
 const ctx = getContext("pomo_timer");
 const { timer, state } = ctx;
@@ -62,9 +62,9 @@ const tooltipSettings = {
 	</div>
 	<div
 		class="wrap-btn"
-		class:focus={$state === STATE_NAMES.focus}
-		class:break-short={$state === STATE_NAMES.breakShort}
-		class:break-long={$state === STATE_NAMES.breakLong}
+		class:focus={$state === NAMES.states.focus}
+		class:break-short={$state === NAMES.states.breakShort}
+		class:break-long={$state === NAMES.states.breakLong}
 	>
 		<Button
 			variant={!$timer ? "outline" : "default"}

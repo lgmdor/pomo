@@ -2,7 +2,7 @@
 import InputRange from "$lib/InputRange.svelte";
 import { db } from "$src/db.js";
 import { formatTime } from "$src/utils.js";
-import { UNIT, DEFAULT_SETTINGS, DB_NAMES } from "$src/utils.js";
+import { UNIT, DEFAULT_SETTINGS, NAMES } from "$src/utils.js";
 
 export let name;
 export let color;
@@ -23,7 +23,7 @@ $: valueDisplay = () => {
 };
 
 const saveValue = () => {
-	db[DB_NAMES.time].put({ name, value });
+	db[NAMES.dbs.time].put({ name, value });
 };
 </script>
 
@@ -59,6 +59,7 @@ const saveValue = () => {
       justify-content: flex-end
       align-items: center
       position: relative
+      cursor: default
       .name
         font-size: 14px
         letter-spacing: 0.25px

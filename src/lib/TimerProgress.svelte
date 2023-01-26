@@ -1,6 +1,6 @@
 <script>
 import { getContext, onMount } from "svelte";
-import { STATE_NAMES } from "$src/utils.js";
+import { NAMES } from "$src/utils.js";
 
 export let state;
 
@@ -24,9 +24,9 @@ const updateProgress = () => {
 		cy="16"
 		r="15.5"
 		class="total"
-		class:focus={state == STATE_NAMES.focus}
-		class:break-short={state == STATE_NAMES.breakShort}
-		class:break-long={state == STATE_NAMES.breakLong}
+		class:focus={state == NAMES.states.focus}
+		class:break-short={state == NAMES.states.breakShort}
+		class:break-long={state == NAMES.states.breakLong}
 	/>
 
 	<circle cx="16" cy="16" r="15.5" class="progress" bind:this={progressElement} />

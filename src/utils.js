@@ -6,10 +6,21 @@ export const formatTime = (time) => {
 	return date.toISOString().substring(14, 19);
 };
 
-export const STATE_NAMES = {
-	focus: "Focus",
-	breakShort: "Short Break",
-	breakLong: "Long Break"
+export const NAMES = {
+	states: {
+		focus: "Focus",
+		breakShort: "Short Break",
+		breakLong: "Long Break"
+	},
+	dbs: {
+		time: "settingsTime",
+		general: "settingsGeneral"
+	},
+	settings: {
+		rounds: "Rounds",
+		playSounds: "Play sounds",
+		autoStart: "Start timers automatically"
+	}
 };
 
 export const UNIT = 1000;
@@ -23,9 +34,9 @@ export const DEFAULT_SETTINGS = {
 		min: 2.5,
 		max: 45,
 		step: 2.5
+	},
+	general: {
+		playSounds: true,
+		autoStart: false
 	}
-};
-
-export const DB_NAMES = {
-	time: "settingsTime"
 };

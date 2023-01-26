@@ -6,7 +6,7 @@ import { db } from "$src/db.js";
 import { setContext, onMount } from "svelte";
 import { writable } from "svelte/store";
 import { liveQuery } from "dexie";
-import { STATE_NAMES, UNIT, DB_NAMES } from "$src/utils.js";
+import { NAMES, UNIT } from "$src/utils.js";
 import soundPath from "$assets/finished.ogg";
 import { soundVolume } from "$src/stores.js";
 
@@ -15,7 +15,7 @@ let settings;
 $: $settings, updateSettings();
 
 const rounds = writable(0);
-const state = writable(STATE_NAMES.focus);
+const state = writable(NAMES.states.focus);
 const time = writable(0);
 const timeTotal = writable(0);
 const timer = writable(null);
@@ -46,7 +46,7 @@ const updateTime = () => {
 };
 
 onMount(() => {
-	settings = liveQuery(() => db[DB_NAMES.time].toArray());
+	settings = liveQuery(() => db[NAMES.dbs.time].toArray());
 });
 
 const ctx = {
@@ -72,17 +72,17 @@ const ctx = {
 	},
 	skipRound() {
 		if ($round >= $rounds) {
-			if ($state === STATE_NAMES.breakLong) {
+			if ($state === NAMES.states.breakLong) {
 				round.update((round) => 1);
-				state.update((state) => STATE_NAMES.focus);
+				state.update((state) => NAMES.states.focus);
 			} else {
-				state.update((state) => STATE_NAMES.breakLong);
+				state.update((state) => NAMES.states.breakLong);
 			}
 		} else {
-			if ($state === STATE_NAMES.focus) {
-				state.update((state) => STATE_NAMES.breakShort);
+			if ($state === NAMES.states.focus) {
+				state.update((state) => NAMES.states.breakShort);
 			} else {
-				state.update((state) => STATE_NAMES.focus);
+				state.update((state) => NAMES.states.focus);
 				round.update(($round) => ($round += 1));
 			}
 		}

@@ -1,29 +1,41 @@
 import Dexie from "dexie";
-import { STATE_NAMES, DEFAULT_SETTINGS, DB_NAMES } from "$src/utils.js";
+import { DEFAULT_SETTINGS, NAMES } from "$src/utils.js";
 
 export const db = new Dexie("dbPomo");
 
 db.version(1).stores({
-	[DB_NAMES.time]: "name, value"
+	[NAMES.dbs.time]: "name, value",
+	[NAMES.dbs.general]: "name, value"
 });
 
 db.on("populate", () => {
-	db[DB_NAMES.time].bulkAdd([
+	db[NAMES.dbs.time].bulkAdd([
 		{
-			name: STATE_NAMES.focus,
+			name: NAMES.states.focus,
 			value: DEFAULT_SETTINGS.time.focus
 		},
 		{
-			name: STATE_NAMES.breakShort,
+			name: NAMES.states.breakShort,
 			value: DEFAULT_SETTINGS.time.breakShort
 		},
 		{
-			name: STATE_NAMES.breakLong,
+			name: NAMES.states.breakLong,
 			value: DEFAULT_SETTINGS.time.breakLong
 		},
 		{
-			name: "Rounds",
+			name: NAMES.settings.rounds,
 			value: DEFAULT_SETTINGS.time.rounds
+		}
+	]);
+
+	db[NAMES.dbs.general].bulkAdd([
+		{
+			name: NAMES.settings.playSounds,
+			value: DEFAULT_SETTINGS.general.playSounds
+		},
+		{
+			name: NAMES.settings.autoStart,
+			value: DEFAULT_SETTINGS.general.autoStart
 		}
 	]);
 });

@@ -34,6 +34,7 @@ const toggle = () => {
   @use 'src/oc'
 
   label
+    display: flex
     input
       appearance: none
       &:checked + .toggle

@@ -1,8 +1,8 @@
 <script>
 import SettingsTimeItem from "$lib/SettingsTimeItem.svelte";
 import { db } from "$src/db.js";
-import { onMount, getContext } from "svelte";
-import { DEFAULT_SETTINGS, STATE_NAMES, DB_NAMES } from "$src/utils.js";
+import { onMount } from "svelte";
+import { DEFAULT_SETTINGS, NAMES } from "$src/utils.js";
 import { liveQuery } from "dexie";
 
 let settings;
@@ -10,10 +10,10 @@ let settings;
 $: $settings, updateSettings();
 
 const reset = async () => {
-	const x = await db[DB_NAMES.time].bulkPut([
-		{ name: STATE_NAMES.focus, value: DEFAULT_SETTINGS.time.focus },
-		{ name: STATE_NAMES.breakShort, value: DEFAULT_SETTINGS.time.breakShort },
-		{ name: STATE_NAMES.breakLong, value: DEFAULT_SETTINGS.time.breakLong },
+	const x = await db[NAMES.dbs.time].bulkPut([
+		{ name: NAMES.states.focus, value: DEFAULT_SETTINGS.time.focus },
+		{ name: NAMES.states.breakShort, value: DEFAULT_SETTINGS.time.breakShort },
+		{ name: NAMES.states.breakLong, value: DEFAULT_SETTINGS.time.breakLong },
 		{ name: "Rounds", value: DEFAULT_SETTINGS.time.rounds }
 	]);
 
@@ -25,7 +25,7 @@ const getSetting = (name) => $settings.find((setting) => setting.name === name);
 const updateSettings = () => {};
 
 onMount(() => {
-	settings = liveQuery(() => db[DB_NAMES.time].toArray());
+	settings = liveQuery(() => db[NAMES.dbs.time].toArray());
 });
 </script>
 
@@ -34,19 +34,19 @@ onMount(() => {
 <div class="wrap">
 	{#if $settings?.length}
 		<SettingsTimeItem
-			name={STATE_NAMES.focus}
+			name={NAMES.states.focus}
 			color="a"
-			defaultValue={getSetting(STATE_NAMES.focus).value}
+			defaultValue={getSetting(NAMES.states.focus).value}
 		/>
 		<SettingsTimeItem
-			name={STATE_NAMES.breakShort}
+			name={NAMES.states.breakShort}
 			color="b"
-			defaultValue={getSetting(STATE_NAMES.breakShort).value}
+			defaultValue={getSetting(NAMES.states.breakShort).value}
 		/>
 		<SettingsTimeItem
-			name={STATE_NAMES.breakLong}
+			name={NAMES.states.breakLong}
 			color="c"
-			defaultValue={getSetting(STATE_NAMES.breakLong).value}
+			defaultValue={getSetting(NAMES.states.breakLong).value}
 		/>
 		<SettingsTimeItem
 			name={getSetting("Rounds").name}
