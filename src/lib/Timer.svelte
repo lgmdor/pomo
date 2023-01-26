@@ -113,12 +113,14 @@ const everySecond = () => {
 
 <!--------style-------->
 <style lang="sass">
-  @use 'src/vars'
-  @use 'src/oc'
+	@use 'src/vars'
+	@use 'src/oc'
 
 .wrap
-  display: flex
-  flex-direction: column
-  align-items: center
-  justify-content: center
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	height: 100%
+	padding: vars.$size-2
 </style>

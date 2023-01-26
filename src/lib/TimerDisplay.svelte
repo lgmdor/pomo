@@ -30,7 +30,7 @@ const { state, time, round, rounds } = getContext("pomo_timer");
     align-items: center
     justify-content: center
     position: relative
-    margin: vars.$space-3 0
+    margin-bottom: vars.$space-4
     .round, .time
       font-family: "Inconsolata"
     .round

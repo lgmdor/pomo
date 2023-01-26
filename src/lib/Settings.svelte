@@ -1,5 +1,6 @@
 <script>
 import SettingsTime from "$lib/SettingsTime.svelte";
+import SettingsGeneral from "$lib/SettingsGeneral.svelte";
 import { Tabs, TabsMenu, TabsMenuItem, TabsWrapper } from "$lib/Tabs/tabs.js";
 import IconTime from "$icons/time.svg?component";
 import IconSettings from "$icons/settings.svg?component";
@@ -13,6 +14,9 @@ import IconInfo from "$icons/info.svg?component";
 	<Tabs>
 		<TabsWrapper>
 			<SettingsTime />
+		</TabsWrapper>
+		<TabsWrapper>
+			<SettingsGeneral />
 		</TabsWrapper>
 
 		<TabsMenu slot="menu">
