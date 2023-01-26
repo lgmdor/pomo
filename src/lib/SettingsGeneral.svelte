@@ -23,16 +23,16 @@ onMount(() => {
 
 <div class="wrap">
 	{#if $settings?.length}
-		<SettingsGeneralItem text="Play sounds">
+		<SettingsGeneralItem text={NAMES.settings.playSounds}>
 			<Toggle
-				isCheckedDefault={getSetting("Play sounds").value}
-				on:checkboxtoggle={(e) => updateSetting("Play sounds", e.detail.isChecked)}
+				isCheckedDefault={getSetting(NAMES.settings.playSounds).value}
+				on:checkboxtoggle={(e) => updateSetting(NAMES.settings.playSounds, e.detail.isChecked)}
 			/>
 		</SettingsGeneralItem>
-		<SettingsGeneralItem text="Start timers automatically">
+		<SettingsGeneralItem text={NAMES.settings.autoStart}>
 			<Toggle
-				isCheckedDefault={getSetting("Auto-start").value}
-				on:checkboxtoggle={(e) => updateSetting("Auto-start", e.detail.isChecked)}
+				isCheckedDefault={getSetting(NAMES.settings.autoStart).value}
+				on:checkboxtoggle={(e) => updateSetting(NAMES.settings.autoStart, e.detail.isChecked)}
 			/>
 		</SettingsGeneralItem>
 	{/if}

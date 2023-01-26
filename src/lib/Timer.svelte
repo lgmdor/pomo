@@ -70,7 +70,7 @@ const ctx = {
 		}
 		updateTime();
 	},
-	skipRound() {
+	async skipRound() {
 		if ($round >= $rounds) {
 			if ($state === NAMES.states.breakLong) {
 				round.update((round) => 1);
@@ -88,17 +88,28 @@ const ctx = {
 		}
 
 		this.resetTimer();
+
+		let autoStart = await db[NAMES.dbs.general].get(NAMES.settings.autoStart);
+
+		if (autoStart.value) {
+			this.startTimer();
+		}
 	}
 };
 
 setContext("pomo_timer", ctx);
 
-const everySecond = () => {
+const everySecond = async () => {
 	if ($time > 0) {
 		time.update(($time) => $time - UNIT);
 	} else {
+		let playSound = await db[NAMES.dbs.general].get(NAMES.settings.playSounds);
+
+		if (playSound.value) {
+			sound.play();
+		}
+
 		ctx.skipRound();
-		sound.play();
 		updateTime();
 	}
 };
