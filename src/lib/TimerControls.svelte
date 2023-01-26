@@ -26,6 +26,27 @@ const skipRound = () => {
 	ctx.skipRound();
 };
 
+const handleKeydown = (e) => {
+	const key = e.code;
+
+	switch (key) {
+		case "KeyR":
+			resetTimer();
+			break;
+
+		case "KeyS":
+			skipRound();
+			break;
+
+		case "Space":
+			toggleTimer();
+			break;
+
+		default:
+			break;
+	}
+};
+
 //----------------
 
 const tooltip = (node, settings) => {
@@ -85,6 +106,8 @@ const tooltipSettings = {
 <svelte:head>
 	<link rel="stylesheet" href="https://unpkg.com/tippy.js@6.3.2/dist/tippy.css" />
 </svelte:head>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <!--------style-------->
 <style lang="sass">
