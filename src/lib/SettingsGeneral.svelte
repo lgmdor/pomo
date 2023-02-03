@@ -14,18 +14,6 @@ let volume = 0;
 let volumeDefault;
 let showVolume = false;
 
-//$: $settings, updateSettings();
-
-const updateSettings = () => {
-	if ($settings) {
-		if (volumeDefault == undefined) {
-			volumeDefault = getSetting(NAMES.settings.volume).value;
-			volume = volumeDefault;
-			showVolume = getSetting(NAMES.settings.playSounds).value;
-		}
-	}
-};
-
 const getSetting = (name) => $settings.find((setting) => setting.name === name);
 
 const putSetting = (setting, value) => db[NAMES.dbs.general].put({ name: setting, value });
@@ -44,8 +32,6 @@ const handleVolumeChange = async () => {
 
 const handleVolumeToggle = (e) => {
 	putSetting(NAMES.settings.playSounds, e.detail.isChecked);
-
-	showVolume = e.detail.isChecked;
 };
 
 const formatVolume = () => (volume == 0 ? "0.0" : volume == 1 ? "1.0" : `${volume}`);
@@ -53,6 +39,19 @@ const formatVolume = () => (volume == 0 ? "0.0" : volume == 1 ? "1.0" : `${volum
 onMount(() => {
 	settings = liveQuery(() => db[NAMES.dbs.general].toArray());
 });
+
+$: {
+	$settings;
+
+	if ($settings) {
+		showVolume = getSetting(NAMES.settings.playSounds).value;
+
+		if (volumeDefault == undefined) {
+			volumeDefault = getSetting(NAMES.settings.volume).value;
+			volume = volumeDefault;
+		}
+	}
+}
 </script>
 
 <!--------markup-------->
