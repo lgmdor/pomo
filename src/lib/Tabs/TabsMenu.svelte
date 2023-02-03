@@ -15,7 +15,10 @@
   @use 'src/oc'
 
   nav
-    margin-top: auto
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
     border-bottom-left-radius: vars.$border-radius
     border-bottom-right-radius: vars.$border-radius
     ul

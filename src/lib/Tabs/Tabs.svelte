@@ -79,16 +79,16 @@ setContext(key, {
 
 <!--------style-------->
 <style lang="sass">
-  @use 'src/vars'
-  @use 'src/oc'
-
-  .tabs
-    min-width: vars.$size-4
-    height: 100%
-    display: flex
-    flex-direction: column
-    .wrap
-      position: relative
-      min-height: vars.$size-4
-      height: 100%
+		@use 'src/vars'
+		@use 'src/oc'
+	
+		.tabs
+			min-width: vars.$size-4
+			height: 100%
+			display: flex
+			flex-direction: column
+			.wrap
+				position: relative
+				min-height: vars.$size-4
+				height: 100%
 </style>

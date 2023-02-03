@@ -41,6 +41,7 @@ const toggle = () => {
         background: vars.$c-main
         .thumb
           transform: translateX(22px)
+          background: oc.$gray-0
       &:disabled + .toggle
         cursor: not-allowed
         background: oc.$dark-4
@@ -58,7 +59,7 @@ const toggle = () => {
       align-items: center
       padding: 0 3px
       .thumb
-        background: #fff
+        background: oc.$gray-4
         height: 14px
         width: 14px
         border-radius: 50%

@@ -20,6 +20,7 @@ export let text;
     align-items: center
     justify-content: space-between
     padding: vars.$space-5 0
+    //min-height: calc(vars.$size-2 + vars.$space-5 * 2)
     span
       font-size: 14px
       line-height: 20px

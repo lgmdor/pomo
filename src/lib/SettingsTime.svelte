@@ -73,7 +73,7 @@ onMount(() => {
 		flex-direction: column
 		height: 100%
 		width: 100%
-		padding: vars.$size-1 0
+		padding: 0 vars.$size-2
 		.reset
 			font-size: 12px
 			letter-spacing: 0.4px

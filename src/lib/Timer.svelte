@@ -6,9 +6,8 @@ import { db } from "$src/db.js";
 import { setContext, onMount } from "svelte";
 import { writable } from "svelte/store";
 import { liveQuery } from "dexie";
-import { NAMES, UNIT } from "$src/utils.js";
+import { NAMES, UNIT, VOLUME_MULTIPLICATOR } from "$src/utils.js";
 import soundPath from "$assets/finished.ogg";
-import { soundVolume } from "$src/stores.js";
 
 let settings;
 
@@ -22,8 +21,6 @@ const timer = writable(null);
 const round = writable(1);
 
 const sound = new Audio(soundPath);
-
-sound.volume = $soundVolume;
 
 const updateSettings = () => {
 	if ($settings) {
@@ -89,7 +86,7 @@ const ctx = {
 
 		this.resetTimer();
 
-		let autoStart = await db[NAMES.dbs.general].get(NAMES.settings.autoStart);
+		const autoStart = await db[NAMES.dbs.general].get(NAMES.settings.autoStart);
 
 		if (autoStart.value) {
 			this.startTimer();
@@ -103,9 +100,12 @@ const everySecond = async () => {
 	if ($time > 0) {
 		time.update(($time) => $time - UNIT);
 	} else {
-		let playSound = await db[NAMES.dbs.general].get(NAMES.settings.playSounds);
+		const playSound = await db[NAMES.dbs.general].get(NAMES.settings.playSounds);
 
 		if (playSound.value) {
+			const volumeSetting = await db[NAMES.dbs.general].get(NAMES.settings.volume);
+
+			sound.volume = volumeSetting.value * VOLUME_MULTIPLICATOR;
 			sound.play();
 		}
 

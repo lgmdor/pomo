@@ -28,11 +28,17 @@ const hideSettings = () => showingSettings.update((x) => false);
   @use 'src/oc'
 
   header
-    padding: vars.$space-5
+    height: vars.$size-2
     display: flex
     justify-content: flex-start
+    align-items: center
+    padding: 0 vars.$space-6
     width: 100%
     border-bottom: vars.$border-default
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
     :global(svg)
       cursor: pointer
       border-radius: vars.$border-radius

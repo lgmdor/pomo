@@ -45,9 +45,13 @@ import IconInfo from "$icons/info.svg?component";
 		position: relative
 		width: 100%
 		height: 100%
+		padding-top: vars.$size-1
+		padding-bottom: vars.$size-2
 
 	:global(.settings .lgmui.tabs-menu-item)
 		@include vars.bgHover(vars.$c-bg-3, 2%)
 	:global(.settings .lgmui.tabs-menu)
 		border-top: vars.$border-default
+	:global(.settings .lgmui.tabs-wrapper)
+		//padding-bottom: vars.$size-2
 </style>

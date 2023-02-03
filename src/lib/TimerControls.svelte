@@ -5,6 +5,7 @@ import Button from "$lib/Button.svelte";
 import tippy from "tippy.js";
 import { getContext } from "svelte";
 import { NAMES } from "$src/utils.js";
+import { showingSettings } from "$src/stores.js";
 
 const ctx = getContext("pomo_timer");
 const { timer, state } = ctx;
@@ -27,23 +28,25 @@ const skipRound = () => {
 };
 
 const handleKeydown = (e) => {
-	const key = e.code;
+	if (!$showingSettings) {
+		const key = e.code;
 
-	switch (key) {
-		case "KeyR":
-			resetTimer();
-			break;
+		switch (key) {
+			case "KeyA":
+				resetTimer();
+				break;
 
-		case "KeyS":
-			skipRound();
-			break;
+			case "KeyD":
+				skipRound();
+				break;
 
-		case "Space":
-			toggleTimer();
-			break;
+			case "Space":
+				toggleTimer();
+				break;
 
-		default:
-			break;
+			default:
+				break;
+		}
 	}
 };
 

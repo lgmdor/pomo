@@ -50,21 +50,19 @@ const saveValue = () => {
     align-items: center
     justify-content: center
     width: 100%
-    padding: vars.$size-2
     height: vars.$size-4
+    padding-bottom: vars.$size-1
     .details
       width: 100%
       margin-bottom: vars.$space-6
       display: flex
       justify-content: space-between
       align-items: center
-      position: relative
       cursor: default
       .name
         font-size: 14px
         letter-spacing: 0.25px
       .value
-        margin-left: vars.$space-6
         font-family: "Inconsolata"
         background: vars.$c-bg-2
         padding: 0.3em

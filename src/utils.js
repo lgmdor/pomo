@@ -19,11 +19,13 @@ export const NAMES = {
 	settings: {
 		rounds: "Rounds",
 		playSounds: "Play sounds",
-		autoStart: "Start timers automatically"
+		autoStart: "Start timers automatically",
+		volume: "Volume"
 	}
 };
 
 export const UNIT = 1000;
+export const VOLUME_MULTIPLICATOR = 0.3;
 
 export const DEFAULT_SETTINGS = {
 	time: {
@@ -37,6 +39,7 @@ export const DEFAULT_SETTINGS = {
 	},
 	general: {
 		playSounds: true,
-		autoStart: false
+		autoStart: false,
+		volume: 0.5
 	}
 };

@@ -36,6 +36,10 @@ db.on("populate", () => {
 		{
 			name: NAMES.settings.autoStart,
 			value: DEFAULT_SETTINGS.general.autoStart
+		},
+		{
+			name: NAMES.settings.volume,
+			value: DEFAULT_SETTINGS.general.volume
 		}
 	]);
 });

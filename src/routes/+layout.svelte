@@ -4,7 +4,9 @@ import PomoHeader from "$lib/PomoHeader.svelte";
 
 <div class="wrap">
 	<PomoHeader />
-	<slot />
+	<div class="wrap-content">
+		<slot />
+	</div>
 </div>
 
 <style lang="sass">
@@ -46,6 +48,10 @@ import PomoHeader from "$lib/PomoHeader.svelte";
     flex-direction: column
     background: vars.$c-bg-3
     border-radius: vars.$border-radius
-    overflow: hidden
+    //overflow: hidden
     border: vars.$border-default
+    .wrap-content
+      height: 100%
+      width: 100%
+      padding-top: vars.$size-2
 </style>

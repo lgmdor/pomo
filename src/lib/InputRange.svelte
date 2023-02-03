@@ -7,6 +7,7 @@ export let min;
 export let max;
 export let color = "";
 export let step;
+export let disabled = false;
 
 let inputElement;
 
@@ -31,10 +32,12 @@ onMount(() => updateInputStyle());
 	{min}
 	{max}
 	{step}
+	{disabled}
 	class:color-a={color == "a"}
 	class:color-b={color == "b"}
 	class:color-c={color == "c"}
 	class:color-d={color == "d"}
+	class:disabled
 />
 
 <!--------style-------->
@@ -78,5 +81,11 @@ onMount(() => updateInputStyle());
       background-image: linear-gradient(to right, oc.$gray-7, oc.$gray-7)
       &::-webkit-slider-thumb
         background: oc.$gray-7
+    &:disabled
+      cursor: not-allowed
+      background-image: linear-gradient(to right, oc.$gray-6, oc.$gray-6)
+      background-color: oc.$gray-8
+      &::-webkit-slider-thumb
+        background: oc.$gray-8
 
 </style>
