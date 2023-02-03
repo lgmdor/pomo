@@ -19,7 +19,7 @@ const config = {
 		},
 		//outDir: "docs"
 		paths: {
-			base: dev ? "" : "/pomo"
+			//base: dev ? "" : "/pomo"
 		}
 	}
 };
