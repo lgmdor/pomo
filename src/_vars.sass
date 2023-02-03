@@ -16,9 +16,16 @@ $size-64: $size-1 * 64
 $size-128: $size-1 * 128
 
 //text colors
-$c-text-1: oc.$dark-1
-$c-text-2: oc.$dark-2
-$c-text-3: oc.$dark-3
+$c-text-dark: oc.$gray-6
+$c-text-default: oc.$gray-5
+$c-text-bright: oc.$gray-3
+
+//font sizes
+$fs-xs: 9px
+$fs-sm: 12px
+$fs-md: 16px 
+$fs-lg: 21.3px
+$fs-xl: 28.4px
 
 //background colors
 $c-bg-1: oc.$dark-9
@@ -42,12 +49,27 @@ $space-5: 0.6em
 $space-6: 0.38em
 $space-7: 0.23em
 
+//borders
+$border-dark: 1px solid oc.$dark-7
+$border-default: 1px solid oc.$dark-6
+$border-bright: 1px solid oc.$dark-4
+
 //misc
-$transition-duration: 60ms
+$transition: all 60ms linear
 $font-family: "Inter"
 $border-radius: 4px
-$border: 1px solid oc.$dark-6
 $boxShadow: rgba(0, 0, 0, 0.18) 0px 2px 4px
 $lineHeight: calc(1em + 1ex)
+
+//mixins
+@mixin center
+  display: flex
+  align-items: center
+  justify-content: center
+
+@mixin bgHover($color, $lightness)
+  background-color: $color
+  &:hover
+    background-color: lighten($color, $lightness)
 
 

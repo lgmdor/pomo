@@ -1,10 +1,12 @@
 <script>
-import PomoHeader from "$comps/PomoHeader.svelte";
+import PomoHeader from "$lib/PomoHeader.svelte";
 </script>
 
 <div class="wrap">
 	<PomoHeader />
-	<slot />
+	<div class="wrap-content">
+		<slot />
+	</div>
 </div>
 
 <style lang="sass">
@@ -23,7 +25,7 @@ import PomoHeader from "$comps/PomoHeader.svelte";
     flex-direction: column
     font-family: vars.$font-family
     background: vars.$c-bg-2
-    color: oc.$gray-5
+    color: vars.$c-text-default
     height: 100vh
   
   :global(body .tippy-box)
@@ -35,7 +37,7 @@ import PomoHeader from "$comps/PomoHeader.svelte";
   :global(svg)
     display: block
     user-select: none
-    transition: color vars.$transition-duration linear
+    transition: vars.$transition
 
   .wrap
     position: relative
@@ -46,6 +48,10 @@ import PomoHeader from "$comps/PomoHeader.svelte";
     flex-direction: column
     background: vars.$c-bg-3
     border-radius: vars.$border-radius
-    overflow: hidden
-    border: vars.$border
+    //overflow: hidden
+    border: vars.$border-default
+    .wrap-content
+      height: 100%
+      width: 100%
+      padding-top: vars.$size-2
 </style>
